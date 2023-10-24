@@ -24,7 +24,7 @@ class FootprintRoute {
             res.status(400).send({error: "Invalid vehicle"});
         }
 
-        const footprint = await FootprintHandlers.getFootPrint(FootPrintCategory.CARBON_FOOTPRINT_FROM_CAR_TRAVEL, {
+        const footprint = await FootprintHandlers.getFootPrintCarTravelHandler(FootPrintCategory.CARBON_FOOTPRINT_FROM_CAR_TRAVEL, {
             distance: distance as string,
             vehicle: vehicle as FootPrintCarTravelVehicle
         })
@@ -41,7 +41,7 @@ class FootprintRoute {
             res.status(400).send({error: "Invalid flight type"});
         }
 
-        const footprint = await FootprintHandlers.getFootPrint(FootPrintCategory.CARBON_FOOTPRINT_FROM_FLIGHT, {
+        const footprint = await FootprintHandlers.getFootPrintFlightHandler(FootPrintCategory.CARBON_FOOTPRINT_FROM_FLIGHT, {
             distance: distance as string,
             type: flightType as FootPrintFlightType
         })
@@ -58,7 +58,7 @@ class FootprintRoute {
             res.status(400).send({error: "Invalid public transit type"});
         }
 
-        const footprint = await FootprintHandlers.getFootPrint(FootPrintCategory.CARBON_FOOTPRINT_FROM_PUBLIC_TRANSIT, {
+        const footprint = await FootprintHandlers.getFootPrintPublicTransitHandler(FootPrintCategory.CARBON_FOOTPRINT_FROM_PUBLIC_TRANSIT, {
             distance: distance as string,
             type: publicTansitType as FootPrintPublicTransitType
         })
