@@ -131,7 +131,7 @@ $ pnpm test
 
 ### POST /api/openAI/chatgptHelper
 
-#### Paramètres
+#### Paramètres Body
 
 | Message | Model | Max_Tokens
 
