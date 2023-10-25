@@ -1,13 +1,7 @@
 import api from "../api";
 import {FoodPrintApiResponse, FoodPrintCategory, FoodPrintEndpoints} from "../../types/FoodPrint";
 
-interface FoodPrintRapidAPIInterface {
-    getFoodPrintByFrenchName: (endpoint: FoodPrintEndpoints, productName: string) => Promise<FoodPrintApiResponse | undefined>
-    getFoodPrintByCategory: (endpoint: FoodPrintEndpoints, category: string) => Promise<FoodPrintApiResponse | undefined>
-    getCategories: () => Promise<FoodPrintCategory | undefined>
-}
-
-class FoodPrintRapidAPI implements FoodPrintRapidAPIInterface {
+class FoodPrintRapidAPI {
     private static baseUrlApi: string
     private static headers: {
         'X-RapidAPI-Key': string,

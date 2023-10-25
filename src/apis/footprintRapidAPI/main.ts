@@ -1,18 +1,7 @@
 import api from "../api";
 import {FootPrintCategory, FootPrintParams} from "../../types/FootPrint";
 
-interface FootPrintRapidAPIInterface {
-    getFootPrintCarTravel: (
-        category: FootPrintCategory.CARBON_FOOTPRINT_FROM_CAR_TRAVEL,
-        params: FootPrintParams
-    ) => Promise<number | undefined>
-    getFootPrintFlight: (
-        category: FootPrintCategory.CARBON_FOOTPRINT_FROM_FLIGHT,
-        params: FootPrintParams
-    ) => Promise<number | undefined>
-}
-
-class FootPrintRapidAPI implements FootPrintRapidAPIInterface {
+class FootPrintRapidAPI {
     private static baseUrlApi: string
     private static headers: {
         'X-RapidAPI-Key': string,
