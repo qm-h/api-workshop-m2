@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use('/api/footprint', createFootprintRouter);
 app.use('/api/foodprint', createFoodPrintRouter);
-app.use('/openAI', createOpenAIRouter);
+app.use('/api/openAI', createOpenAIRouter);
 
 app.listen(port, () => {
     console.log(`Server started at http://localhost:${port}`);

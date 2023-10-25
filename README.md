@@ -33,7 +33,7 @@ $ pnpm test
 
 ## API
 
-### GET /footprint/getfootprintcartravel
+### GET /api/footprint/getfootprintcartravel
 
 #### Paramètres
 
@@ -47,7 +47,7 @@ $ pnpm test
 }
 ```
 
-### GET /footprint/getfootprintpublictransport
+### GET /api/footprint/getfootprintpublictransport
 
 #### Paramètres
 
@@ -61,7 +61,7 @@ $ pnpm test
 }
 ```
 
-### GET /footprint/getfootprintflight
+### GET /api/footprint/getfootprintflight
 
 #### Paramètres
 
@@ -75,7 +75,7 @@ $ pnpm test
 }
 ```
 
-### GET /foodprint/getfoodprint
+### GET /api/foodprint/getfoodprint
 
 #### Paramètres
 
@@ -94,7 +94,7 @@ $ pnpm test
 }
 ```
 
-### GET /foodprint/getfoodprintbycategory
+### GET /api/foodprint/getfoodprintbycategory
 
 #### Paramètres
 
@@ -113,7 +113,7 @@ $ pnpm test
 }
 ```
 
-### GET /foodprint/getCategories
+### GET /api/foodprint/getCategories
 
 #### Paramètres
 
