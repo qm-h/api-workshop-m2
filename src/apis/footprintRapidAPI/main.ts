@@ -63,5 +63,5 @@ class FootPrintRapidAPI {
     }
 }
 
-const createFootPrintRapidAPI = new FootPrintRapidAPI()
+const createFootPrintRapidAPI = () => new FootPrintRapidAPI()
 export default createFootPrintRapidAPI

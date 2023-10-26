@@ -1,12 +1,12 @@
-import chatGPTHelper from "../apis/openAI/openAI.api";
-import {ChatCompletionResponse} from "../types/OpenAI";
+import chatGPTHelper from '../apis/openAI/openAI.api'
+import { type ChatCompletionResponse } from '../types/OpenAI'
 
 const OpenAIHandlers = {
-    chatGPTHelp: async (
-        message: string,
-        model?: string,
-        max_tokens?: number
-    ): Promise<ChatCompletionResponse> => await chatGPTHelper(message, model, max_tokens),
+  chatGPTHelp: async (
+    message: string,
+    model?: string,
+    maxTokens?: number
+  ): Promise<ChatCompletionResponse> => await chatGPTHelper(message, model, maxTokens)
 }
 
-export default OpenAIHandlers;
+export default OpenAIHandlers
