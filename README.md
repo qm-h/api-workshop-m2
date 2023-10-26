@@ -13,14 +13,14 @@ $ pnpm install
 ## Prérequis
 
 - Node.js
-- npm
+- pnpm
 
 # Utilisation
 
 ## Lancement
 
 ```bash
-$ pnpm start
+$ pnpm start:dev
 ```
 
 ## Tests
@@ -322,6 +322,21 @@ $ pnpm test
     "mail": "string",
     "password": "string"
   }
+}
+```
+
+### GET /api/user/login
+
+### Paramètres
+
+| password | mail
+
+### Réponse 
+
+```json
+{
+	"id_user": "number",
+	"mail": "string"
 }
 ```
 

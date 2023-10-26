@@ -7,7 +7,22 @@ class UserRoute {
   constructor () {
     this.router = Router()
     this.router.post('/createUser', this.createUser)
+    this.router.post('/login', this.login)
     this.router.get('/findUserById/:id', this.findUserById)
+  }
+
+  public async login (req: Request, res: Response) {
+    const { password, mail } = req.body
+    const user = await UserHandlers.login(
+      {
+        password: password as string,
+        mail: mail as string
+      }
+    )
+    if (user === null) {
+      res.status(404).send({ error: 'User not found' })
+    }
+    res.send(user)
   }
 
   public async createUser (req: Request, res: Response) {
@@ -26,7 +41,6 @@ class UserRoute {
 
   public async findUserById (req: Request, res: Response) {
     const { id } = req.params
-    console.log(id)
     const user = await UserHandlers.selectUser(
       id
     )

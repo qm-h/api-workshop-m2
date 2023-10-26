@@ -1,5 +1,6 @@
 import prisma from '../../prisma/prisma'
 import { type UserPrisma } from '../types/Prisma'
+import { comparePassword } from '../utils/user/security/crypt'
 
 const createUserPrisma = () => ({
   createUser: async (password: string, mail: string): Promise<UserPrisma> => {
@@ -34,6 +35,28 @@ const createUserPrisma = () => ({
     }
 
     return user
+  },
+  login: async (password: string, mail: string): Promise<Omit<UserPrisma, 'password'>> => {
+    const user = await prisma.user.findFirst({
+      where: {
+        mail
+      }
+    })
+
+    if (user === null) {
+      throw new Error('User not found')
+    }
+
+    const canLogin = await comparePassword(password, user.password)
+
+    if (!canLogin) {
+      throw new Error('Password is incorrect')
+    }
+
+    return {
+      id_user: user.id_user,
+      mail: user.mail
+    }
   }
 })
 
