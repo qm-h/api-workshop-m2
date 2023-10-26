@@ -1,7 +1,7 @@
 import { type Request, type Response, Router } from 'express'
 import FootprintHandlers from '../handlers/footprint.handlers'
 import {
-  FootPrintCarTravelVehicle,
+  FootPrintCarTravelVehicleType,
   FootPrintCategory,
   FootPrintFlightType,
   FootPrintPublicTransitType
@@ -23,13 +23,13 @@ class FootprintRoute {
   public async getFootPrintCarTravel (req: Request, res: Response) {
     const { distance, vehicle } = req.query
 
-    if (!Object.values(FootPrintCarTravelVehicle).includes(vehicle as FootPrintCarTravelVehicle)) {
+    if (!Object.values(FootPrintCarTravelVehicleType).includes(vehicle as FootPrintCarTravelVehicleType)) {
       res.status(400).send({ error: 'Invalid vehicle' })
     }
 
     const footprint = await FootprintHandlers.getFootPrintCarTravelHandler(FootPrintCategory.CARBON_FOOTPRINT_FROM_CAR_TRAVEL, {
       distance: distance as string,
-      vehicle: vehicle as FootPrintCarTravelVehicle
+      vehicle: vehicle as FootPrintCarTravelVehicleType
     })
     if (footprint === null) {
       res.status(404).send({ error: 'Footprint not found' })

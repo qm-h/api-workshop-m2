@@ -11,7 +11,7 @@ export enum FootPrintCategory {
 
 export interface FootPrintCarTravelParams {
   distance: string // in km
-  vehicle: FootPrintCarTravelVehicle
+  vehicle: FootPrintCarTravelVehicleType
 }
 
 export interface FootPrintGenericParams {
@@ -31,7 +31,7 @@ export enum FootPrintFlightType {
   LONG_FIRST_CLASS_FLIGHT = 'LongFirstClassFlight',
 }
 
-export enum FootPrintCarTravelVehicle {
+export enum FootPrintCarTravelVehicleType {
   SMALL_DIESEL_CAR = 'SmallDieselCar',
   MEDIUM_DIESEL_CAR = 'MediumDieselCar',
   LARGE_DIESEL_CAR = 'LargeDieselCar',

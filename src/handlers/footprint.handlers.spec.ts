@@ -1,5 +1,5 @@
 import {
-  FootPrintCarTravelVehicle,
+  FootPrintCarTravelVehicleType,
   FootPrintCategory,
   FootPrintFlightType,
   type FootPrintParams,
@@ -12,7 +12,7 @@ jest.mock('../apis/footprintRapidAPI/main')
 const mockedFootPrintRapidAPI = createFootPrintRapidAPI as jest.Mocked<typeof createFootPrintRapidAPI>
 describe('FootPrintHandlers', () => {
   beforeEach(() => {
-    mockedFootPrintRapidAPI.getFootPrintCarTravel.mockClear()
+    mockedFootPrintRapidAPI.getFootPrintCarTravel.mockResolvedValue(100)
     mockedFootPrintRapidAPI.getFootPrintFlight.mockClear()
     mockedFootPrintRapidAPI.getFootPrintPublicTransit.mockClear()
   })
@@ -21,7 +21,7 @@ describe('FootPrintHandlers', () => {
     const category: FootPrintCategory = FootPrintCategory.CARBON_FOOTPRINT_FROM_CAR_TRAVEL
     const params: FootPrintParams = {
       distance: '100',
-      vehicle: FootPrintCarTravelVehicle.LARGE_DIESEL_CAR
+      vehicle: FootPrintCarTravelVehicleType.LARGE_DIESEL_CAR
     }
 
     await FootPrintHandlers.getFootPrintCarTravelHandler(category, params)
