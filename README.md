@@ -302,7 +302,6 @@ $ pnpm test
   "user": {
     "id": "string",
     "mail": "string",
-    "password": "string"
   }
 }
 ```
@@ -322,21 +321,6 @@ $ pnpm test
     "mail": "string",
     "password": "string"
   }
-}
-```
-
-### GET /api/user/login
-
-### Paramètres
-
-| password | mail
-
-### Réponse 
-
-```json
-{
-	"id_user": "number",
-	"mail": "string"
 }
 ```
 
