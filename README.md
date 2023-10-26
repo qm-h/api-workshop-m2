@@ -39,7 +39,7 @@ $ pnpm test
 
 #### Paramètres
 
-| Nom | Vehicule
+| distance | vehicule
 
 #### Réponse
 
@@ -53,7 +53,7 @@ $ pnpm test
 
 #### Paramètres
 
-| Nom | Type
+| distance | publicTansitType
 
 #### Réponse
 
@@ -67,7 +67,7 @@ $ pnpm test
 
 #### Paramètres
 
-| Endpoint | Type
+| distance | flightType
 
 #### Réponse
 
@@ -81,7 +81,7 @@ $ pnpm test
 
 #### Paramètres
 
-| userId |categoryName |emissionCo2 | description | nameActivity | tauxEmission | distanceParcourue
+| userId | categoryName | emissionCo2 | description | nameActivity | tauxEmission | distanceParcourue
 
 #### Réponse
 
@@ -196,7 +196,7 @@ $ pnpm test
 
 #### Paramètres
 
-| Endpoint | FrenchName
+| frenchName
 
 #### Réponse
 
@@ -215,7 +215,7 @@ $ pnpm test
 
 #### Paramètres
 
-| Endpoint | Category
+| category
 
 #### Réponse
 
@@ -234,7 +234,7 @@ $ pnpm test
 
 #### Paramètres
 
-| None
+| none
 
 #### Réponse
 
